@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ProjectMatic — AI proposal generator for creative agencies." />
+    <title>ProjectMatic — Proposal Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { ink: '#172033', navy: '#0d1731', brand: '#6558e8', mint: '#39cba4', canvas: '#f5f7fb' },
+            boxShadow: { card: '0 16px 38px rgba(18, 31, 64, .08)', glow: '0 12px 30px rgba(101, 88, 232, .25)' },
+            fontFamily: { sans: ['Plus Jakarta Sans', 'ui-sans-serif', 'system-ui'] },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-canvas text-ink antialiased">
+    <div class="min-h-screen lg:grid lg:grid-cols-[264px_1fr]">
+      <aside class="sidebar fixed inset-x-0 bottom-0 z-30 flex h-[70px] items-center justify-around border-t border-slate-200 bg-white px-3 lg:sticky lg:top-0 lg:row-span-2 lg:h-screen lg:flex-col lg:items-stretch lg:justify-start lg:border-r lg:border-t-0 lg:px-5 lg:py-7">
+        <a href="#workspace" class="hidden items-center gap-3 lg:flex" aria-label="ProjectMatic home">
+          <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand text-xl font-extrabold text-white shadow-glow">P</span>
+          <span><strong class="block text-base tracking-tight">ProjectMatic</strong><small class="text-[10px] font-bold uppercase tracking-[.18em] text-slate-400">Proposal Intelligence</small></span>
+        </a>
+        <nav class="flex w-full items-center justify-around lg:mt-12 lg:block lg:space-y-2 lg:overflow-hidden" aria-label="Main navigation">
+          <a href="index.html" class="nav-link active"><span class="nav-icon">⌁</span><span>Workspace</span></a>
+          <a href="pages/proposals.html" class="nav-link"><span class="nav-icon">▤</span><span>Proposals</span><b>8</b></a>
+          <a href="pages/rate-card.html" class="nav-link"><span class="nav-icon">◈</span><span>Rate Card</span></a>
+          <a href="pages/templates.html" class="nav-link"><span class="nav-icon">◇</span><span>Templates</span></a>
+        </nav>
+      </aside>
+
+      <header class="flex items-center justify-between bg-white px-5 py-4 sm:px-8 lg:px-10 lg:py-6">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.18em] text-brand">Monday, 6 October</p>
+          <h1 class="mt-1 text-xl font-extrabold tracking-tight sm:text-2xl">Good morning, Rasyad <span aria-hidden="true"></span></h1>
+        </div>
+      </header>
+
+      <main id="workspace" class="pb-24 lg:pb-8">
+        <section class="workspace-only px-5 py-5 sm:px-8 lg:px-10 lg:py-7">
+          <div class="hero-card relative overflow-hidden rounded-[26px] bg-navy px-6 py-7 text-white shadow-card sm:px-8 lg:flex lg:items-center lg:justify-between">
+            <div class="relative z-10 max-w-xl">
+              <div id="engine-badge" class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-[#9ff5dd]"><span id="engine-dot" class="status-dot"></span><span id="engine-label">Checking Langflow</span></div>
+              <h2 class="text-2xl font-extrabold tracking-tight sm:text-3xl">Proposal hebat dimulai dari<br class="hidden sm:block" /> brief yang sederhana.</h2>
+              <p class="mt-3 max-w-md text-sm leading-6 text-slate-300">Ubah brief mentah menjadi Scope of Work, timeline, dan estimasi biaya yang siap direview.</p>
+            </div>
+            <div class="relative z-10 mt-6 flex gap-2 lg:mt-0">
+              <div class="hero-stat"><strong>3.4h</strong><span>saved / brief</span></div>
+              <div class="hero-stat"><strong>92%</strong><span>price accuracy</span></div>
+            </div>
+            <span class="hero-orb orb-one"></span><span class="hero-orb orb-two"></span>
+          </div>
+        </section>
+
+        <section class="workspace-only grid gap-6 px-5 sm:px-8 xl:grid-cols-[minmax(0,1.48fr)_minmax(320px,.9fr)] xl:px-10">
+          <div class="space-y-6">
+            <article class="rounded-[24px] bg-white p-5 shadow-card sm:p-6">
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div><p class="eyebrow">01 / CREATE</p><h2 class="mt-1 text-lg font-extrabold tracking-tight">Mulai dari client brief</h2></div>
+                <label class="inline-flex cursor-pointer items-center gap-2 self-start rounded-lg bg-[#f5f4ff] px-3 py-2 text-xs font-bold text-brand transition hover:bg-[#e9e7ff]" for="file-upload">↥ <span>Unggah dokumen</span><input id="file-upload" class="sr-only" type="file" accept=".pdf,.doc,.docx,.txt" /></label>
+              </div>
+              <label for="brief" class="sr-only">Client brief</label>
+              <textarea id="brief" class="mt-5 min-h-[168px] w-full resize-y rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-6 text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/10" placeholder="Tempel brief dari klien di sini...&#10;&#10;Contoh: Kami membutuhkan campaign peluncuran aplikasi financial planning untuk Gen Z, target launch akhir November."></textarea>
+              <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                <label class="proposal-field"><span>Nama klien <em>(opsional)</em></span><input id="client-name" type="text" placeholder="Contoh: FinSync Indonesia" /></label>
+                <label class="proposal-field"><span>Template proposal</span><select id="template-select"><option value="Smart Proposal">Smart Proposal</option><option value="Integrated Campaign">Integrated Campaign</option><option value="Website & Landing Page">Website & Landing Page</option><option value="Brand Identity">Brand Identity</option></select></label>
+              </div>
+              <div class="mt-4 flex flex-col gap-3 border-t border-slate-100 pt-4 sm:flex-row sm:items-center sm:justify-between">
+                <div class="flex items-center gap-2 text-xs text-slate-400"><span class="grid h-6 w-6 place-items-center rounded-full bg-slate-100 text-[11px]">✦</span><span>AI akan membuat <b class="text-slate-600">draf</b> — bukan keputusan final.</span></div>
+                <button id="generate-btn" class="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-5 py-3 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-[#584bd9] active:translate-y-0"><span>Generate proposal</span><span aria-hidden="true">→</span></button>
+              </div>
+            </article>
+
+            <article id="proposals" class="rounded-[24px] bg-white p-5 shadow-card sm:p-6">
+              <div class="flex items-center justify-between"><div><p class="eyebrow">RECENT WORK</p><h2 class="mt-1 text-lg font-extrabold tracking-tight">Proposal terbaru</h2></div><a href="pages/proposals.html" class="text-xs font-bold text-brand hover:underline">Lihat semua</a></div>
+              <div class="mt-5 overflow-x-auto"><table class="w-full min-w-[540px] text-left text-sm"><thead class="text-[10px] font-bold uppercase tracking-[.13em] text-slate-400"><tr><th class="pb-3">Project</th><th class="pb-3">Client</th><th class="pb-3">Estimate</th><th class="pb-3">Status</th><th class="pb-3"></th></tr></thead><tbody class="divide-y divide-slate-100"><tr><td class="py-4 font-bold">Kirana Beauty 2026</td><td class="py-4 text-slate-500">Kirana Labs</td><td class="py-4 font-medium">Rp 86,5 jt</td><td class="py-4"><span class="tag tag-review">Needs review</span></td><td class="py-4 text-right text-slate-400">•••</td></tr><tr><td class="py-4 font-bold">Revamp Website Kuno</td><td class="py-4 text-slate-500">Kuno Studio</td><td class="py-4 font-medium">Rp 124 jt</td><td class="py-4"><span class="tag tag-sent">Sent</span></td><td class="py-4 text-right text-slate-400">•••</td></tr><tr><td class="py-4 font-bold">Traveloka Brand Film</td><td class="py-4 text-slate-500">Traveloka</td><td class="py-4 font-medium">Rp 210 jt</td><td class="py-4"><span class="tag tag-draft">Draft</span></td><td class="py-4 text-right text-slate-400">•••</td></tr></tbody></table></div>
+            </article>
+          </div>
+
+          <aside class="space-y-6" aria-label="Project controls">
+            <article class="rounded-[24px] bg-white p-5 shadow-card sm:p-6">
+              <div class="flex items-center justify-between"><div><p class="eyebrow">YOUR STACK</p><h2 class="mt-1 text-lg font-extrabold tracking-tight">System health</h2></div><span class="grid h-9 w-9 place-items-center rounded-xl bg-[#eafaf5] text-mint">✓</span></div>
+              <ul class="mt-5 space-y-4">
+                <li class="stack-row"><span class="logo-mark bob">B</span><span><b>IBM Bob</b><small>MCP client / interface</small></span><i class="online"></i></li>
+                <li class="stack-row"><span class="logo-mark flow">⌁</span><span><b>Langflow</b><small id="langflow-health">Checking local Flow API…</small></span><i id="langflow-indicator" class="online"></i></li>
+                <li class="stack-row"><span class="logo-mark astra">✦</span><span><b>AstraDB</b><small>Rate card &amp; templates</small></span><i class="online"></i></li>
+                <li class="stack-row"><span class="logo-mark comp">↗</span><span><b>Composio</b><small>Google Docs actions</small></span><i class="online"></i></li>
+              </ul>
+            </article>
+            <article id="rate-card" class="rounded-[24px] border border-brand/10 bg-[#f6f5ff] p-5 sm:p-6">
+              <p class="eyebrow text-brand">ASTRA DB / LIVE RATE CARD</p><div class="mt-2 flex items-end justify-between"><div><h2 class="text-lg font-extrabold tracking-tight">Creative team</h2><p class="mt-1 text-xs text-slate-500">Jakarta • updated 2h ago</p></div><a href="pages/rate-card.html" class="rounded-lg bg-white px-3 py-2 text-xs font-bold text-brand shadow-sm hover:bg-slate-50">Manage</a></div>
+              <div class="mt-5 space-y-3"><div class="rate-row"><span>Strategy</span><b>Rp 850k <small>/ day</small></b></div><div class="rate-row"><span>Design</span><b>Rp 750k <small>/ day</small></b></div><div class="rate-row"><span>Development</span><b>Rp 1.1 jt <small>/ day</small></b></div></div>
+            </article>
+            <article class="rounded-[24px] bg-[#fffbf2] p-5 sm:p-6"><div class="flex gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[#fff0ca] text-lg">☀</span><div><h2 class="font-extrabold tracking-tight">Review is a feature.</h2><p class="mt-1 text-xs leading-5 text-slate-500">Semua angka perlu persetujuan PM sebelum proposal dikirim ke klien.</p></div></div></article>
+          </aside>
+        </section>
+
+        <section id="proposals-view" class="app-view hidden px-5 py-6 sm:px-8 lg:px-10 lg:py-8" aria-labelledby="proposals-title">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"><div><p class="eyebrow">PROPOSAL LIBRARY</p><h2 id="proposals-title" class="mt-1 text-2xl font-extrabold tracking-tight">All proposals</h2><p class="mt-2 text-sm text-slate-500">Lacak setiap draf sebelum dibagikan ke klien.</p></div><button id="new-proposal-btn" class="rounded-xl bg-brand px-4 py-3 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5">+ New proposal</button></div>
+          <div class="mt-7 rounded-[24px] bg-white p-4 shadow-card sm:p-6"><div class="flex flex-col gap-4 border-b border-slate-100 pb-4 sm:flex-row sm:items-center sm:justify-between"><div class="flex gap-2 overflow-x-auto" role="tablist"><button data-proposal-filter="all" class="filter-chip active">All <span>8</span></button><button data-proposal-filter="review" class="filter-chip">Needs review <span>3</span></button><button data-proposal-filter="draft" class="filter-chip">Draft <span>4</span></button><button data-proposal-filter="sent" class="filter-chip">Sent <span>1</span></button></div><label class="relative block"><span class="sr-only">Search proposals</span><input id="proposal-search" class="w-full rounded-xl border border-slate-200 py-2 pl-9 pr-3 text-xs outline-none transition focus:border-brand sm:w-52" placeholder="Search project..." /><span class="absolute left-3 top-2 text-slate-400">⌕</span></label></div><div class="mt-3 overflow-x-auto"><table class="w-full min-w-[650px] text-left text-sm"><thead class="text-[10px] font-bold uppercase tracking-[.13em] text-slate-400"><tr><th class="px-2 py-3">Project</th><th class="px-2 py-3">Client</th><th class="px-2 py-3">Updated</th><th class="px-2 py-3">Estimate</th><th class="px-2 py-3">Status</th><th class="px-2 py-3"></th></tr></thead><tbody id="proposal-library" class="divide-y divide-slate-100"><tr data-status="review"><td class="px-2 py-4 font-bold">Kirana Beauty 2026</td><td class="px-2 py-4 text-slate-500">Kirana Labs</td><td class="px-2 py-4 text-slate-500">12m ago</td><td class="px-2 py-4 font-semibold">Rp 86,5 jt</td><td class="px-2 py-4"><span class="tag tag-review">Needs review</span></td><td class="px-2 py-4 text-right"><button class="row-action">Open ↗</button></td></tr><tr data-status="sent"><td class="px-2 py-4 font-bold">Revamp Website Kuno</td><td class="px-2 py-4 text-slate-500">Kuno Studio</td><td class="px-2 py-4 text-slate-500">Yesterday</td><td class="px-2 py-4 font-semibold">Rp 124 jt</td><td class="px-2 py-4"><span class="tag tag-sent">Sent</span></td><td class="px-2 py-4 text-right"><button class="row-action">Open ↗</button></td></tr><tr data-status="draft"><td class="px-2 py-4 font-bold">Traveloka Brand Film</td><td class="px-2 py-4 text-slate-500">Traveloka</td><td class="px-2 py-4 text-slate-500">2 days ago</td><td class="px-2 py-4 font-semibold">Rp 210 jt</td><td class="px-2 py-4"><span class="tag tag-draft">Draft</span></td><td class="px-2 py-4 text-right"><button class="row-action">Open ↗</button></td></tr><tr data-status="draft"><td class="px-2 py-4 font-bold">Bersih Bumi Social Kit</td><td class="px-2 py-4 text-slate-500">Bersih Bumi</td><td class="px-2 py-4 text-slate-500">4 days ago</td><td class="px-2 py-4 font-semibold">Rp 44 jt</td><td class="px-2 py-4"><span class="tag tag-draft">Draft</span></td><td class="px-2 py-4 text-right"><button class="row-action">Open ↗</button></td></tr></tbody></table></div></div>
+        </section>
+
+        <section id="rate-card-view" class="app-view hidden px-5 py-6 sm:px-8 lg:px-10 lg:py-8" aria-labelledby="rate-card-title"><div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"><div><p class="eyebrow">RULES / KEYWORD BASE</p><h2 id="rate-card-title" class="mt-1 text-2xl font-extrabold tracking-tight">Rate card</h2><p class="mt-2 text-sm text-slate-500">Single source of truth untuk keyword matching dan estimasi lokal.</p></div><button id="sync-rate-btn" class="rounded-xl border border-brand/20 bg-white px-4 py-3 text-sm font-bold text-brand transition hover:bg-[#f6f5ff]">↻ Refresh local rules</button></div><div class="mt-7 grid gap-5 xl:grid-cols-[1fr_300px]"><article class="rounded-[24px] bg-white p-5 shadow-card sm:p-6"><div class="flex items-center justify-between border-b border-slate-100 pb-4"><div><h3 class="font-extrabold">Creative team pricing</h3><p class="mt-1 text-xs text-slate-400">Loaded from <code>keyword-base.js</code></p></div><span class="tag tag-sent">Active</span></div><div id="rate-card-list" class="divide-y divide-slate-100"></div></article><aside class="rounded-[24px] bg-[#f6f5ff] p-5 sm:p-6"><p class="eyebrow text-brand">HOW IT WORKS</p><h3 class="mt-2 text-lg font-extrabold tracking-tight">Transparent by design</h3><ol class="mt-5 space-y-4 text-xs leading-5 text-slate-600"><li><b class="mr-2 text-brand">01</b>Brief dibaca oleh keyword matcher.</li><li><b class="mr-2 text-brand">02</b>Service dan rate terkait ditambahkan.</li><li><b class="mr-2 text-brand">03</b>PM meninjau quantity dan total.</li></ol><div class="mt-6 rounded-xl bg-white p-3 text-xs text-slate-500">Untuk produksi, mirror data ini ke AstraDB agar RAG menggunakan rule yang sama.</div></aside></div></section>
+
+        <section id="templates-view" class="app-view hidden px-5 py-6 sm:px-8 lg:px-10 lg:py-8" aria-labelledby="templates-title"><div><p class="eyebrow">AGENCY STANDARD</p><h2 id="templates-title" class="mt-1 text-2xl font-extrabold tracking-tight">Proposal templates</h2><p class="mt-2 text-sm text-slate-500">Mulai dari struktur yang telah disetujui tim, lalu sesuaikan dengan brief.</p></div><div class="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-3"><article class="template-card"><div class="template-cover cover-campaign"><span>✦</span><p>CAMPAIGN</p></div><div class="p-5"><span class="tag tag-review">Popular</span><h3 class="mt-3 font-extrabold">Integrated Campaign</h3><p class="mt-2 text-xs leading-5 text-slate-500">Strategy, content, visual assets, dan activation plan.</p><div class="mt-5 flex items-center justify-between text-xs text-slate-400"><span>6 sections</span><button class="use-template" data-template="Integrated Campaign">Use template →</button></div></div></article><article class="template-card"><div class="template-cover cover-web"><span>◇</span><p>WEB BUILD</p></div><div class="p-5"><span class="tag tag-draft">Product</span><h3 class="mt-3 font-extrabold">Website &amp; Landing Page</h3><p class="mt-2 text-xs leading-5 text-slate-500">Discovery, UX/UI, development, QA, dan handover.</p><div class="mt-5 flex items-center justify-between text-xs text-slate-400"><span>7 sections</span><button class="use-template" data-template="Website & Landing Page">Use template →</button></div></div></article><article class="template-card"><div class="template-cover cover-brand"><span>◈</span><p>BRAND</p></div><div class="p-5"><span class="tag tag-sent">Refined</span><h3 class="mt-3 font-extrabold">Brand Identity</h3><p class="mt-2 text-xs leading-5 text-slate-500">Brand strategy, visual identity, guideline, dan rollout.</p><div class="mt-5 flex items-center justify-between text-xs text-slate-400"><span>6 sections</span><button class="use-template" data-template="Brand Identity">Use template →</button></div></div></article></div></section>
+      </main>
+    </div>
+
+    <div id="generation-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-panel">
+        <button id="close-modal" class="absolute right-5 top-5 grid h-8 w-8 place-items-center rounded-lg text-slate-400 transition hover:bg-slate-100 hover:text-slate-700" aria-label="Close dialog">×</button>
+        <div id="generation-state" class="px-1 py-3"><div class="grid h-12 w-12 place-items-center rounded-2xl bg-[#efedff] text-xl text-brand">✦</div><p class="eyebrow mt-5">PROJECTMATIC IS WORKING</p><h2 id="modal-title" class="mt-1 text-2xl font-extrabold tracking-tight">Menyusun proposal Anda</h2><p id="status-text" class="mt-2 text-sm leading-6 text-slate-500">Mengirim brief aman ke Langflow via MCP...</p><div class="mt-7 h-2 overflow-hidden rounded-full bg-slate-100"><div id="progress-bar" class="h-full w-0 rounded-full bg-brand transition-all duration-500"></div></div><div class="mt-5 flex items-center gap-2 font-mono text-[11px] text-slate-400"><span class="online"></span><span id="protocol-log">MCP • handshaking</span></div></div>
+        <div id="proposal-result" class="hidden"><div class="flex items-start gap-3"><div class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#e9faf5] text-xl text-mint">✓</div><div><p class="eyebrow text-mint">DRAFT READY</p><h2 id="draft-title" class="mt-1 text-xl font-extrabold tracking-tight">ProjectMatic Proposal</h2><p id="draft-subtitle" class="mt-1 text-xs text-slate-500">Generated by Langflow</p></div></div><div class="mt-6 rounded-2xl border border-slate-100 bg-slate-50 p-4"><div class="flex justify-between text-sm"><span class="text-slate-500">Estimated investment</span><b id="estimate-value">See review</b></div><div class="mt-3 flex justify-between text-sm"><span class="text-slate-500">Timeline</span><b id="timeline-value">From brief</b></div><div class="mt-3 flex justify-between text-sm"><span class="text-slate-500">Source</span><b id="source-value" class="text-mint">Langflow</b></div></div><div id="provenance-card" class="mt-4 rounded-xl border border-[#dcefe9] bg-[#f3fcf9] p-3 text-xs leading-5 text-[#347664]"></div><p class="mt-4 text-xs leading-5 text-slate-400">AI-generated draft. Review scope, assumptions, and numbers before sharing.</p><div class="mt-5 grid grid-cols-2 gap-3"><button id="review-btn" class="rounded-xl bg-navy px-4 py-3 text-sm font-bold text-white transition hover:bg-[#1c2a4c]">Review draft</button><button id="export-pdf-btn" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-600 transition hover:border-brand hover:text-brand">Export PDF ↓</button></div></div>
+      </div>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="assets/js/keyword-base.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
